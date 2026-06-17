@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../css/EventCard.css";
+
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const EventCard = (props) => {
   const [event, setEvent] = useState({

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useRoutes, Link } from "react-router-dom";
-import Events from "./pages/Events";
-import Venues from "./pages/Venues";
-import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
+
+import React, { useEffect, useState } from "react";
+import { Link, useRoutes } from "react-router-dom";
+
+import Event from "./pages/Event";
+import Events from "./pages/Events";
+import PageNotFound from "./pages/PageNotFound";
+import Venues from "./pages/Venues";
 
 const App = () => {
   const [events, setEvents] = useState([]);
@@ -42,6 +45,10 @@ const App = () => {
     {
       path: "/events",
       element: <Events data={events} />,
+    },
+    {
+      path: "/event/:id",
+      element: <Event />,
     },
     {
       path: "/*",

@@ -1,7 +1,8 @@
+import dotenv from "dotenv";
 import express from "express";
 import path from "path";
+import process from "process";
 import favicon from "serve-favicon";
-import dotenv from "dotenv";
 
 // import the router from your routes file
 import eventsRouter from "./routes/events.js";

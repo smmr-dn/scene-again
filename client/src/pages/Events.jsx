@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import EventCard from "../components/EventCard";
 import "../css/Events.css";
+
+import React, { useEffect, useState } from "react";
+
+import EventCard from "../components/EventCard";
 
 const Events = (props) => {
   const [events, setEvents] = useState([]);
