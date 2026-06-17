@@ -1,9 +1,12 @@
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import { Link, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 
-import Event from "./pages/Event";
+import { EventsAPI } from "./api/EventsAPI";
+import Event from "./components/Event";
+import HeaderButtons from "./components/HeaderButtons";
+import MapPin from "./components/MapPin";
 import Events from "./pages/Events";
 import PageNotFound from "./pages/PageNotFound";
 import Venues from "./pages/Venues";
@@ -13,9 +16,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const response = await fetch("/api/events");
-      const data = await response.json();
-      setEvents(data);
+      const eventData = await EventsAPI.getAllEvents();
+      setEvents(eventData);
     };
 
     fetchEvents();
@@ -58,20 +60,41 @@ const App = () => {
 
   return (
     <div className="app">
-      <header className="main-header">
+      <div className="background-overlay">
+        <HeaderButtons />
         <h1>Scene Again</h1>
-
-        <div className="header-buttons">
-          <Link to="/" role="button">
-            Home
-          </Link>
-          <Link to="/events" role="button">
-            Events
-          </Link>
+        <div className="map-pins">
+          <MapPin
+            color="#534AB7"
+            textColor="#EEEDFE"
+            dotColor="#26215C"
+            icon="armchair"
+            label="The Screening Room"
+          />
+          <MapPin
+            color="#0F6E56"
+            textColor="#E1F5EE"
+            dotColor="#04342C"
+            icon="world"
+            label="The Art House"
+          />
+          <MapPin
+            color="#993C1D"
+            textColor="#FAECE7"
+            dotColor="#4A1B0C"
+            icon="movie"
+            label="The Blockbuster Lounge"
+          />
+          <MapPin
+            color="#185FA5"
+            textColor="#E6F1FB"
+            dotColor="#042C53"
+            icon="trophy"
+            label="The Academy Hall"
+          />
         </div>
-      </header>
-
-      <main>{element}</main>
+        <main>{element}</main>
+      </div>
     </div>
   );
 };

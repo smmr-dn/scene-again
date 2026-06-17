@@ -1,5 +1,3 @@
-import "../css/EventCard.css";
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 

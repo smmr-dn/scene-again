@@ -6,6 +6,7 @@ import favicon from "serve-favicon";
 
 // import the router from your routes file
 import eventsRouter from "./routes/events.js";
+import venuesRouter from "./routes/venues.js";
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ app.use(express.json());
 
 // use the events router for all routes starting with /api/events
 app.use("/api/events", eventsRouter);
+// use the venues router for all routes starting with /api/venues
+app.use("/api/venues", venuesRouter);
 
 if (process.env.NODE_ENV === "development") {
   app.use(favicon(path.resolve("../", "client", "public", "party.png")));

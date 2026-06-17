@@ -1,0 +1,58 @@
+.pin-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
+
+.pin-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.pin-container {
+  width: 52px;
+  height: 62px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-drop {
+  width: 44px;
+  height: 44px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+.pin-drop i {
+  transform: rotate(45deg);
+  font-size: 20px;
+}
+
+.pin-tip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.6;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pin-label {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 80px;
+  line-height: 1.3;
+  margin-top: 4px;
+}

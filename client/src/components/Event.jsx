@@ -1,15 +1,12 @@
-import "../css/Event.css";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import React, { useEffect, useParams, useState } from "react";
-
-import { dates } from "../../api/dates";
-import { EventsAPI } from "../../api/EventsAPI";
+import { EventsAPI } from "../api/EventsAPI";
+import Header from "./Header";
 
 const Event = () => {
   const { id } = useParams();
   const [event, setEvent] = useState({});
-  const [time, setTime] = useState([]);
-  const [remaining, setRemaining] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -22,44 +19,14 @@ const Event = () => {
     })();
   }, []);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const result = await dates.formatTime(event.time);
-        setTime(result);
-      } catch (error) {
-        throw error;
-      }
-    })();
-  }, [event]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const timeRemaining = await dates.formatRemainingTime(event.remaining);
-        setRemaining(timeRemaining);
-        dates.formatNegativeTimeRemaining(remaining, event.id);
-      } catch (error) {
-        throw error;
-      }
-    })();
-  }, [event]);
-
   return (
-    <article className="event-information">
-      <img src={event.image} />
-
-      <div className="event-information-overlay">
-        <div className="text">
-          <h3>{event.title}</h3>
-          <p>
-            <i className="fa-regular fa-calendar fa-bounce"></i> {event.date}{" "}
-            <br /> {time}
-          </p>
-          <p id={`remaining-${event.id}`}>{remaining}</p>
-        </div>
-      </div>
-    </article>
+    <>
+      <Header />
+      <article className="event-information">
+        <img src={event.image} />
+        <h3>{event.title}</h3>
+      </article>
+    </>
   );
 };
 

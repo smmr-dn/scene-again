@@ -2,7 +2,7 @@ import React from "react";
 
 const Venues = () => {
   return (
-    <div className="Venues">
+    <div className="venues-page">
       <main></main>
     </div>
   );

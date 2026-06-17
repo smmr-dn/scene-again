@@ -1,5 +1,3 @@
-import "../css/Events.css";
-
 import React, { useEffect, useState } from "react";
 
 import EventCard from "../components/EventCard";
@@ -17,7 +15,7 @@ const Events = (props) => {
         {events && events.length > 0 ? (
           events.map((event, index) => (
             <EventCard
-              key={event.id}
+              key={index}
               id={event.id}
               image={event.image}
               title={event.title}
