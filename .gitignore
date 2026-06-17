@@ -23,3 +23,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Vite build output (generated from client/ via `npm run build`)
+server/public/*
