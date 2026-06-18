@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
     padding: 24px;
 }
 
@@ -19,7 +19,9 @@
 }
 
 .event-details p strong {
-    font-weight: bold;
+    font-weight: 800;
+    color: var(--main-color, #e8b86d);
+    letter-spacing: 0.03em;
 }
 
 .event-details {

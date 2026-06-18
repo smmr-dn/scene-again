@@ -34,8 +34,24 @@ const Venue = () => {
       </div>
 
       <div className="venue-events">
-        {eventsByVenueId.map((event) => (
-          <EventCard key={event.id} {...event} />
+        {eventsByVenueId.map((event, index) => (
+          <EventCard
+            key={index}
+            id={event.id}
+            image={event.image}
+            title={event.title}
+            imdbRank={event.imdbrank}
+            imdbRating={event.imdbrating}
+            year={event.year}
+            director={event.director}
+            genre={event.genre}
+            date={event.date}
+            time={event.time}
+            status={event.status}
+            whyRewatch={event.whyrewatch}
+            discussionPrompt={event.discussionprompt}
+            venueId={event.venueId}
+          />
         ))}
       </div>
     </article>
