@@ -7,7 +7,7 @@
     background-position: center center;
     background-attachment: fixed;
     background-color: var(--secondary-color);
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Comfortaa';
     --main-color: rgb(193, 124, 74);
     --secondary-color: rgb(43, 28, 18);
@@ -51,8 +51,7 @@
 }
 
 #root main {
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
 
 #root [role=button] {

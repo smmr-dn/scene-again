@@ -11,8 +11,8 @@
 }
 
 .pin-container {
-  width: 52px;
-  height: 62px;
+  width: 72px;
+  height: 86px;
   position: relative;
   display: flex;
   align-items: center;
@@ -20,8 +20,8 @@
 }
 
 .pin-drop {
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
   display: flex;
@@ -29,17 +29,17 @@
   justify-content: center;
   position: absolute;
   top: 0;
-  left: 4px;
+  left: 6px;
 }
 
 .pin-drop i {
   transform: rotate(45deg);
-  font-size: 20px;
+  font-size: 28px;
 }
 
 .pin-tip {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   opacity: 0.6;
   position: absolute;
@@ -49,10 +49,10 @@
 }
 
 .pin-label {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   text-align: center;
-  max-width: 80px;
+  max-width: 110px;
   line-height: 1.3;
-  margin-top: 4px;
+  margin-top: 6px;
 }

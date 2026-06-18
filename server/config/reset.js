@@ -1,6 +1,6 @@
-import { pool } from "./database.js";
 import eventData from "../data/events.js";
 import venueData from "../data/venues.js";
+import { pool } from "./database.js";
 
 async function createEventTable() {
   const createEventQuery = `
@@ -43,7 +43,7 @@ async function createVenueTable() {
     )
 `;
   try {
-    const res = await pool.query(createVenueQuery);
+    await pool.query(createVenueQuery);
     console.log("🎉 Venues table created successfully");
   } catch (err) {
     console.error("Error creating venues table:", err);
@@ -97,13 +97,14 @@ const seedVenuesTable = async () => {
 
     pool.query(insertQuery, values, (err, res) => {
       if (err) {
-        console.error("⚠️ error inserting event", err);
+        console.error("⚠️ error inserting venues", err);
         return;
       }
 
-      console.log(`✅ ${event.title} added successfully`);
+      console.log(`✅ ${venue.name} added successfully`);
     });
   });
 };
 
 seedEventsTable();
+seedVenuesTable();
