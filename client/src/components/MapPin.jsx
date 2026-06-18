@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MapPin = ({ color, textColor, dotColor, icon, label, venueId }) => (
+const MapPin = ({ color, textColor, dotColor, icon, label, venueId, showLabel = true }) => (
   <Link to={"/venue/" + venueId}>
     <div className="pin-wrapper">
       <div className="pin-container">
@@ -10,9 +10,11 @@ const MapPin = ({ color, textColor, dotColor, icon, label, venueId }) => (
         </div>
         <div className="pin-tip" style={{ background: dotColor }} />
       </div>
-      <span className="pin-label" style={{ color: textColor }}>
-        {label}
-      </span>
+      {showLabel && (
+        <span className="pin-label" style={{ color: textColor }}>
+          {label}
+        </span>
+      )}
     </div>
   </Link>
 );

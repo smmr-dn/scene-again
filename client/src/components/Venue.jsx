@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { EventsAPI } from "../api/EventsAPI";
+import VenueMapPin from "../utils/VenueMapPin";
 import EventCard from "./EventCard";
+import MapPin from "./MapPin";
 
 const Venue = () => {
   const { id } = useParams();
@@ -29,6 +31,13 @@ const Venue = () => {
       style={{ boxShadow: "0px 0px 0px 0px" }}
     >
       <div className="venue-title">
+        <MapPin
+          key={id}
+          {...VenueMapPin[id]}
+          label={VenueMapPin[id].label}
+          venueId={id}
+          showLabel={false}
+        />
         <h3>{venue.name}</h3>
         <p>{venue.tagline}</p>
       </div>
