@@ -11,7 +11,7 @@ const Event = () => {
   useEffect(() => {
     (async () => {
       try {
-        const eventData = await EventsAPI.getEventsById(id);
+        const eventData = await EventsAPI.getEventById(id);
         setEvent(eventData);
       } catch (error) {
         throw error;

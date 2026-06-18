@@ -1,16 +1,19 @@
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import { useRoutes } from "react-router-dom";
+import { useLocation, useRoutes } from "react-router-dom";
 
 import { EventsAPI } from "./api/EventsAPI";
 import Event from "./components/Event";
 import Header from "./components/Header";
+import HeaderButtons from "./components/HeaderButtons";
+import Venue from "./components/Venue";
 import Events from "./pages/Events";
 import PageNotFound from "./pages/PageNotFound";
 import Venues from "./pages/Venues";
 
 const App = () => {
+  const location = useLocation();
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -27,22 +30,10 @@ const App = () => {
       path: "/",
       element: <Venues />,
     },
-    // {
-    //   path: '/echolounge',
-    //   element: <LocationEvents index={1} />
-    // },
-    // {
-    //   path: '/houseofblues',
-    //   element: <LocationEvents index={2} />
-    // },
-    // {
-    //   path: '/pavilion',
-    //   element: <LocationEvents index={3} />
-    // },
-    // {
-    //   path: '/americanairlines',
-    //   element: <LocationEvents index={4} />
-    // },
+    {
+      path: "/venue/:id",
+      element: <Venue />,
+    },
     {
       path: "/events",
       element: <Events data={events} />,
@@ -60,8 +51,8 @@ const App = () => {
   return (
     <div className="app">
       <div className="background-overlay">
-        <Header />
-        <main>{element}</main>
+        {location.pathname === "/" ? <HeaderButtons /> : <Header />}
+        <main className={location.pathname !== "/" ? "with-header" : ""}>{element}</main>
       </div>
     </div>
   );

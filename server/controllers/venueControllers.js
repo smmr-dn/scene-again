@@ -24,4 +24,20 @@ const getVenueById = async (req, res) => {
   }
 };
 
-export default { getAllVenues, getVenueById };
+const getEventsByVenueId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const events = await pool.query("SELECT * FROM events WHERE venueId = $1", [
+      id,
+    ]);
+    if (events.rows.length === 0) {
+      return res.status(404).json({ error: "No events found for this venue" });
+    }
+    res.status(200).json(events.rows);
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+export default { getAllVenues, getVenueById, getEventsByVenueId };

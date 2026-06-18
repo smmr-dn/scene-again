@@ -24,7 +24,7 @@ async function createEventTable() {
     )
 `;
   try {
-    const res = await pool.query(createEventQuery);
+    await pool.query(createEventQuery);
     console.log("🎉 Events table created successfully");
   } catch (err) {
     console.error("Error creating events table:", err);
@@ -36,7 +36,7 @@ async function createVenueTable() {
     DROP TABLE IF EXISTS venues;
 
     CREATE TABLE IF NOT EXISTS venues (
-        id SERIAL PRIMARY KEY,
+        id TEXT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         tagline VARCHAR(255) NOT NULL,
         color VARCHAR(7) NOT NULL
@@ -90,7 +90,7 @@ const seedVenuesTable = async () => {
 
   venueData.forEach((venue) => {
     const insertQuery = {
-      text: "INSERT INTO venues (id, name, tagline, color) VALUES ($1, $2, $3)",
+      text: "INSERT INTO venues (id, name, tagline, color) VALUES ($1, $2, $3, $4)",
     };
 
     const values = [venue.id, venue.name, venue.tagline, venue.color];

@@ -6,7 +6,6 @@
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    background-color: var(--secondary-color);
     min-height: 100vh;
     font-family: 'Comfortaa';
     --main-color: rgb(193, 124, 74);
@@ -30,24 +29,9 @@
 
 #root h1, #root h2, #root h3 {
     text-transform: uppercase;
-    margin-bottom: 0px;
-}
-
-#root h1 {
-    font-size: 3em;
-    font-weight: bold;
+    margin: 0;
     font-family: 'Comfortaa', sans-serif;
-    text-shadow: 3px 3px 4px black;
-}
-
-#root h2 {
-    font-size: 2em;
-    font-weight: 800;
-}
-
-#root h3 {
-    font-size: 1.3em;
-    font-weight: 800;
+    text-shadow: 3px 3px 4px var(--secondary-color);
 }
 
 #root main {
