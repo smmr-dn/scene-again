@@ -4,7 +4,7 @@ Submitted by: **Scene Again**
 
 About this web app: **An application with lists of movie events held in different venues for different purposes for movie fans who love chitchatting about old movies.**
 
-Time spent: **X** hours
+Time spent: **7** hours
 
 ## Required Features
 
