@@ -35,7 +35,10 @@ Here's a walkthrough of implemented required features:
 
 <img src='https://github.com/user-attachments/assets/89163e5d-7d47-4b92-a8c1-cff48deb2677' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with ScreenToGif
+<img src='https://github.com/user-attachments/assets/de7cff28-ec08-4273-aa14-d447d3a228dd' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+GIF created with Screenshot
 
 ## License
 
