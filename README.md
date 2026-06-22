@@ -1,4 +1,4 @@
-# WEB103 Project 3 - *Name of App Here*
+# WEB103 Project 3 - *Uyen Doan*
 
 Submitted by: **Your name here**
 
@@ -24,8 +24,8 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [x] An additional page shows all possible events
-  - [ ] Users can sort *or* filter events by location.
+- [x] An additional page shows all events
+  - [x] Users can sort *or* filter events by location.
 - [ ] Events display a countdown showing the time remaining before that event
   - [ ] Events appear with different formatting when the event has passed (ex. negative time, indication the event has passed, crossed out, etc.).
 
@@ -33,7 +33,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/user-attachments/assets/89163e5d-7d47-4b92-a8c1-cff48deb2677' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ScreenToGif
 
