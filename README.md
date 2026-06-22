@@ -1,8 +1,8 @@
 # WEB103 Project 3 - *Uyen Doan*
 
-Submitted by: **Your name here**
+Submitted by: **Scene Again**
 
-About this web app: **App description here**
+About this web app: **An application with lists of movie events held in different venues for different purposes for movie fans who love chitchatting about old movies.**
 
 Time spent: **X** hours
 
