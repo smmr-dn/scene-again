@@ -38,4 +38,14 @@ export const EventsAPI = {
 
     return await response.json();
   },
+
+  getAllVenues: async () => {
+    const response = await fetch("/api/venues");
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch venues");
+    }
+
+    return await response.json();
+  },
 };

@@ -6,6 +6,11 @@
     gap: 10px;
 }
 
+.venue-title p {
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
 .venue-information h3 {
     font-weight: 500;
 }

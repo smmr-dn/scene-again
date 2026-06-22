@@ -4,6 +4,7 @@ const getAllVenues = async (req, res) => {
   try {
     const venues = await pool.query("SELECT * FROM venues");
     res.status(200).json(venues.rows);
+    console.log(venues.rows);
   } catch (error) {
     console.error("Error fetching venues:", error);
     res.status(500).json({ error: "Internal Server Error" });
